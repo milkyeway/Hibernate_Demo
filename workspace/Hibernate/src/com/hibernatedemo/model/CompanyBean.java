@@ -6,6 +6,12 @@ public class CompanyBean {
 	
 	private String companyName;
 	
+	public CompanyBean(int companyId, String companyName) {
+		super();
+		this.companyId = companyId;
+		this.companyName = companyName;
+	}
+	
 	public int getCompanyId() {
 		return companyId;
 	}
