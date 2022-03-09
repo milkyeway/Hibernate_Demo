@@ -18,8 +18,8 @@ public class DemoDepartmentActionEx6 {
 			
 			Department dept1 = session.get(Department.class, 2);
 			
-			System.out.println("id: " + dept1.getDeptid());
-			System.out.println("department name: " + dept1.getDeptname());
+			System.out.println("id: " + dept1.getDeptid()); // 2
+			System.out.println("department name: " + dept1.getDeptname()); // RD
 
 			session.getTransaction().commit();
 		}catch(Exception e) {
