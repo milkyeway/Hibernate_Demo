@@ -1,0 +1,9 @@
+create table company(
+	companyId int primary key not null,
+	companyName nvarchar(50) not null,
+)
+
+create table Department(
+	deptid int primary key identity(1,1) not null,
+	deptname nvarchar(50) not null,
+)
