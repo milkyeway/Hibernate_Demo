@@ -8,7 +8,7 @@ import com.hibernatedemo.model.Department;
 import com.hibernatedemo.util.HibernateUtils;
 
 public class DemoDepartmentActionEx5 {
-
+//	Get Transaction object
 	public static void main(String[] args) {
 		SessionFactory factory = HibernateUtils.getSessionFactory();
 		Session session = factory.getCurrentSession();
