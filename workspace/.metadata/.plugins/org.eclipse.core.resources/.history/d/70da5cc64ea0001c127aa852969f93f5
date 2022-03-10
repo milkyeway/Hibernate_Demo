@@ -1,0 +1,54 @@
+package com.hibernatedemo.action;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.hibernatedemo.model.BookUsers;
+import com.hibernatedemo.model.Books;
+import com.hibernatedemo.util.HibernateUtils;
+
+public class DemoOneToManyBookActionEx1 {
+	
+	public static void main(String[] args) {
+		
+		SessionFactory factory = HibernateUtils.getSessionFactory();
+		Session session = factory.getCurrentSession();
+
+		try {
+			session.beginTransaction();
+
+			// new book1
+			Books book1 = new Books();
+			book1.setBooktitle("Java 11");
+			book1.setPublicYear("2002-11");
+			
+			// new book2
+			Books book2 = new Books();
+			book2.setBooktitle("Hololive 11");
+			book2.setPublicYear("2033-5");
+			
+			// user
+			
+
+			// book set user
+		
+
+			// make book set
+			
+
+			// user set book
+			
+
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			session.getTransaction().rollback();
+			e.printStackTrace();
+		} finally {
+			HibernateUtils.closeSessionFactory();
+		}
+
+	}
+}

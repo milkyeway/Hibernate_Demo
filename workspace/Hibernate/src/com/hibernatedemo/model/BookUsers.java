@@ -22,7 +22,7 @@ public class BookUsers {
 
 	private String username;
 
-	@OneToMany(fetch = FetchType.LAZY,mappedBy = "",cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.LAZY,mappedBy = "bookuser",cascade = CascadeType.ALL)
 	private Set<Books> books = new LinkedHashSet<Books>();
 	
 	public BookUsers() {
