@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -22,6 +23,9 @@ public class InstructorDetail {
 	@Column(name="phone")
 	private String phone;
 
+	@OneToOne(mappedBy = "instructorDetail")
+	private Instructor instructor;
+	
 	public InstructorDetail() {
 	}
 	
@@ -52,6 +56,14 @@ public class InstructorDetail {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public Instructor getInstructor() {
+		return instructor;
+	}
+
+	public void setInstructor(Instructor instructor) {
+		this.instructor = instructor;
 	}
 	
 }
