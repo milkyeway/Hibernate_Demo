@@ -34,6 +34,7 @@
         <!--  class mapping -->
         <mapping class="com.hibernatedemo.model.Department"/>
     	<mapping class="com.hibernatedemo.model.InstructorDetail"/>
+        <mapping class="com.hibernatedemo.model.Instructor"/>
         
     </session-factory>
 </hibernate-configuration>
