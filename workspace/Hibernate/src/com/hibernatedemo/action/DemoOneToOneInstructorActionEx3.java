@@ -16,9 +16,10 @@ public class DemoOneToOneInstructorActionEx3 {
 		try {
 			session.beginTransaction();
 
+//			¥u¯à¥ÎID
 			Instructor ins2 = session.get(Instructor.class, 3);
 
-			InstructorDetail detail2 = ins2.getInstructorDetail();
+//			InstructorDetail detail2 = ins2.getInstructorDetail();
 			
 			session.delete(ins2);
 

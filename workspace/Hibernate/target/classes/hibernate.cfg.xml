@@ -35,6 +35,8 @@
         <mapping class="com.hibernatedemo.model.Department"/>
     	<mapping class="com.hibernatedemo.model.InstructorDetail"/>
         <mapping class="com.hibernatedemo.model.Instructor"/>
+        <mapping class="com.hibernatedemo.model.Books"/>
+        <mapping class="com.hibernatedemo.model.BookUsers"/>
         
     </session-factory>
 </hibernate-configuration>
