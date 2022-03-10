@@ -33,7 +33,7 @@
         
         <!--  class mapping -->
         <mapping class="com.hibernatedemo.model.Department"/>
-    
+    	<mapping class="com.hibernatedemo.model.InstructorDetail"/>
         
     </session-factory>
 </hibernate-configuration>

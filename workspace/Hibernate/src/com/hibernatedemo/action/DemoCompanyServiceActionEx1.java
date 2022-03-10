@@ -17,8 +17,8 @@ public class DemoCompanyServiceActionEx1 {
 			
 			session.beginTransaction();
 			CompanyService comService = new CompanyService(session);
-			CompanyBean oneBean = comService.select(1001);
 			
+			CompanyBean oneBean = comService.select(1001);
 			System.out.println(oneBean.getCompanyId() + " " + oneBean.getCompanyName());
 			
 		}catch (Exception e) {
