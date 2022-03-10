@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 
 import com.hibernatedemo.model.CompanyBean;
 import com.hibernatedemo.model.CompanyDao;
+import com.hibernatedemo.model.CompanyDaoInterface;
 import com.hibernatedemo.util.HibernateUtils;
 
 public class DemoCompanyBeanDaoActionEx1 {
@@ -30,7 +31,8 @@ public class DemoCompanyBeanDaoActionEx1 {
 		try {
 			session.beginTransaction();
 			
-			CompanyDao dao = new CompanyDao(session);
+//			面向介面設計
+			CompanyDaoInterface dao = new CompanyDao(session);
 			
 //			新增單筆
 //			dao.insert(new CompanyBean(1003,"twitter"));
