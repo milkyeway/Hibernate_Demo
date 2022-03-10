@@ -10,17 +10,11 @@ import com.hibernatedemo.model.CompanyDao;
 import com.hibernatedemo.util.HibernateUtils;
 
 public class DemoCompanyBeanDaoActionEx1 {
-
-	/* 三層式架構
+// 三層式架構
+	/*
 	/* 1.表現層 (Presentation layer) JSP
 	 * 2.業務邏輯層 (Business layer) Service
 	 * 3.資料訪問層 (Data access layer) DAO
-	 */
-	
-	/* 網頁架構
-	/* MVC
-	 * 三層式架構
-	 * 兩種一起使用
 	 */
 	 	
 	public static void main(String[] args) {
