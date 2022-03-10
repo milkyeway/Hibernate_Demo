@@ -3,7 +3,26 @@ create table company(
 	companyName nvarchar(50) not null,
 )
 
+go
+
 create table Department(
 	deptid int primary key identity(1,1) not null,
 	deptname nvarchar(50) not null,
 )
+
+go
+
+create table instructorDetail(
+id int not null primary key identity(101,1),
+email nvarchar(100) not null,
+phone nvarchar(50) not null
+)
+
+go
+
+create table instructor(
+id int not null primary key identity(1,1),
+instructorName nvarchar(50) not null,
+fk_instructorDetail_id int references instructorDetail(id)
+)
+
