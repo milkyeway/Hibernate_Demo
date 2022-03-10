@@ -16,14 +16,11 @@ public class DemoOneToOneInstructorActionEx3 {
 		try {
 			session.beginTransaction();
 
-			Instructor ins2 = session.get(Instructor.class, 2);
+			Instructor ins2 = session.get(Instructor.class, 3);
 
 			InstructorDetail detail2 = ins2.getInstructorDetail();
-
-			if (detail2 != null) {
-				System.out.println("¥¿¦b§R°£: " + detail2.getInstructor().getName());
-				System.out.println(detail2);
-			}
+			
+			session.delete(ins2);
 
 			session.getTransaction().commit();
 		} catch (Exception e) {

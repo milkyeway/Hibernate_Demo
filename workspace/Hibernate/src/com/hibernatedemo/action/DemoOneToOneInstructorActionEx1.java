@@ -16,9 +16,9 @@ public class DemoOneToOneInstructorActionEx1 {
 		try {
 			session.beginTransaction();
 			
-			Instructor ins1 = new Instructor("Joe");
+			Instructor ins1 = new Instructor("Jeff");
 			
-			InstructorDetail detail1 = new InstructorDetail("Joe@gmail", "55555");
+			InstructorDetail detail1 = new InstructorDetail("Jeff@gmail", "888");
 			
 			ins1.setInstructorDetail(detail1);
 			

@@ -15,7 +15,7 @@ public class DemoOneToOneInstructorActionEx4 {
 		try {
 			session.beginTransaction();
 
-			InstructorDetail detail101 = session.get(InstructorDetail.class, 101);
+			InstructorDetail detail101 = session.get(InstructorDetail.class, 105);
 
 			if (detail101 != null) {
 				System.out.println("NAME: " + detail101.getInstructor().getName());
