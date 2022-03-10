@@ -13,14 +13,22 @@ public class InstructorDetail {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name="id")
 	private int id;
-
-	@Column(name = "email")
+	
+	@Column(name="email")
 	private String email;
 	
-	@Column(name = "phone")
+	@Column(name="phone")
 	private String phone;
+
+	public InstructorDetail() {
+	}
+	
+	public InstructorDetail(String email, String phone) {
+		this.email = email;
+		this.phone = phone;
+	}
 	
 	public int getId() {
 		return id;
@@ -45,12 +53,5 @@ public class InstructorDetail {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-
-	public InstructorDetail() {
-	}
-
-	public InstructorDetail(String email, String phone) {
-		this.email = email;
-		this.phone = phone;
-	}
+	
 }

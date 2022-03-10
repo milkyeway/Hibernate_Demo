@@ -12,20 +12,31 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity
-@Table(name = "instructorDetail")
+@Table(name = "instructor")
 public class Instructor {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name="id")
 	private int id;
 	
-	@Column(name = "name")
+	@Column(name="instructorName")
 	private String name;
 	
 	@Transient // 不讓 Hibernat 做對應
 	@Column(name="fk_instructorDetail_id")
 	private int detailId;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="fk_instructorDetail_id")
+	private InstructorDetail instructorDetail;
+	
+	public Instructor() {
+	}
+
+	public Instructor(String name) {
+		this.name = name;
+	}
 	
 	public int getId() {
 		return id;
@@ -58,15 +69,5 @@ public class Instructor {
 	public void setInstructorDetail(InstructorDetail instructorDetail) {
 		this.instructorDetail = instructorDetail;
 	}
-
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "fk_instructorDetail_id")
-	private InstructorDetail instructorDetail;
 	
-	public Instructor() {
-	}
-
-	public Instructor(String name) {
-		this.name = name;
-	}
 }
