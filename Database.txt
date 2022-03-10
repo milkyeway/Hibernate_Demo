@@ -26,3 +26,19 @@ instructorName nvarchar(50) not null,
 fk_instructorDetail_id int references instructorDetail(id)
 )
 
+go
+
+create table bookUsers(
+id int primary key identity(1,1) not null,
+username nvarchar(50),
+);
+
+go
+
+create table books(
+id int primary key identity(1,1) not null,
+booktitle nvarchar(50),
+publicYear nvarchar(50),
+fk_user_id int references bookUsers(id)
+);
+
