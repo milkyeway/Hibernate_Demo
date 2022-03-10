@@ -14,5 +14,5 @@ public interface CompanyServiceInterface {
 
 	CompanyBean insert(CompanyBean comBean);
 
-	CompanyBean updataOne(int comId, String comName);
+	CompanyBean updateOne(int comId, String comName);
 }
