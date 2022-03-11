@@ -12,8 +12,8 @@ import com.hibernatedemo.util.HibernateUtils;
 public class DemoHqlActionEx1 {
 	public static void main(String[] args) {
 		DemoHqlActionEx1 demoHql = new DemoHqlActionEx1();
-		demoHql.hqlSelectAll();
-
+//		demoHql.hqlSelectAll();
+		demoHql.hqlSelectSalary();
 	}
 
 	private void hqlSelectAll() {
@@ -27,6 +27,34 @@ public class DemoHqlActionEx1 {
 
 			Query<Employee> query = session.createQuery(hql, Employee.class);
 
+			List<Employee> list = query.getResultList();
+
+			for (Employee oneBean : list) {
+				System.out.println(oneBean);
+			}
+
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			session.getTransaction().rollback();
+			e.printStackTrace();
+		} finally {
+			HibernateUtils.closeSessionFactory();
+		}
+	}
+
+	private void hqlSelectSalary() {
+		SessionFactory factory = HibernateUtils.getSessionFactory();
+		Session session = factory.getCurrentSession();
+
+		try {
+			session.beginTransaction();
+
+			String hql = "from Employee e where salary > 30000 and e.vacation > 10";
+
+//			設置Query方法
+			Query<Employee> query = session.createQuery(hql, Employee.class);
+
+//			執行Qrery
 			List<Employee> list = query.getResultList();
 
 			for (Employee oneBean : list) {
