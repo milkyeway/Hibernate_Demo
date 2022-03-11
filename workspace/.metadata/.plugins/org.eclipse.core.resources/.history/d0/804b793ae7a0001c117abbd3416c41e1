@@ -1,0 +1,10 @@
+package com.hibernatedemo.model;
+
+public class Employee {
+
+	
+	
+	public Employee() {
+	}
+
+}
