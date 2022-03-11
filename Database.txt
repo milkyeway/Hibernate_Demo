@@ -68,12 +68,23 @@ go
 
 insert into friends (friendName) values 
 ('Tom'),('Mary'),('Tina')
-GO
+
+go
+
 insert into groups (groupName) 
 values('high school'),('game'),('work')
-GO
+
+go
+
 insert into friend_group (fk_friend_id, 
 fk_group_id) values
 (1,1),(1,2),(2,3),
 (3,1),(3,2),(3,3)
 
+go
+
+create table member(
+ id int not null primary key identity(1,1),
+ member_name varchar(50) not null,
+ member_pwd varchar(50) not null
+);
