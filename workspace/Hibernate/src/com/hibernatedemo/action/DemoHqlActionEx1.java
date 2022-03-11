@@ -13,7 +13,8 @@ public class DemoHqlActionEx1 {
 	public static void main(String[] args) {
 		DemoHqlActionEx1 demoHql = new DemoHqlActionEx1();
 //		demoHql.hqlSelectAll();
-		demoHql.hqlSelectSalary();
+//		demoHql.hqlSelectSalary();
+		demoHql.hqlSelectSalary2(25000,3);
 	}
 
 	private void hqlSelectAll() {
@@ -54,6 +55,35 @@ public class DemoHqlActionEx1 {
 //			設置Query方法
 			Query<Employee> query = session.createQuery(hql, Employee.class);
 
+//			執行Qrery
+			List<Employee> list = query.getResultList();
+
+			for (Employee oneBean : list) {
+				System.out.println(oneBean);
+			}
+
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			session.getTransaction().rollback();
+			e.printStackTrace();
+		} finally {
+			HibernateUtils.closeSessionFactory();
+		}
+	}
+	
+	private void hqlSelectSalary2(int salary,int vacation) {
+		SessionFactory factory = HibernateUtils.getSessionFactory();
+		Session session = factory.getCurrentSession();
+
+		try {
+			session.beginTransaction();
+
+			String hql = "from Employee e where salary > :s and e.vacation > :v";
+
+//			設置Query方法
+			Query<Employee> query = session.createQuery(hql, Employee.class)
+					.setParameter("s",salary)
+					.setParameter("v",vacation);
 //			執行Qrery
 			List<Employee> list = query.getResultList();
 
