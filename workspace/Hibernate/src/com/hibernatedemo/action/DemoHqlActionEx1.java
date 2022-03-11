@@ -14,7 +14,8 @@ public class DemoHqlActionEx1 {
 		DemoHqlActionEx1 demoHql = new DemoHqlActionEx1();
 //		demoHql.hqlSelectAll();
 //		demoHql.hqlSelectSalary();
-		demoHql.hqlSelectSalary2(25000,3);
+//		demoHql.hqlSelectSalary2(25000,3);
+		demoHql.hqlUpdateSalary(1,99999);
 	}
 
 //	查詢全部資料
@@ -103,4 +104,29 @@ public class DemoHqlActionEx1 {
 		}
 	}
 
+//	利用變數變更資料
+	private void hqlUpdateSalary(int id, int salary) {
+		SessionFactory factory = HibernateUtils.getSessionFactory();
+		Session session = factory.getCurrentSession();
+		
+		try {
+			session.beginTransaction();
+			
+			String hql = "update Employee set salary = :salary where id = :id"; 
+			
+		    session.createQuery(hql)
+		    	.setParameter("salary", salary)
+					.setParameter("id", id)
+					.executeUpdate();
+					
+			
+			session.getTransaction().commit();
+		}catch(Exception e) {
+			session.getTransaction().rollback();
+			e.printStackTrace();
+		}finally {
+			HibernateUtils.closeSessionFactory();
+		}
+	}
+	
 }
