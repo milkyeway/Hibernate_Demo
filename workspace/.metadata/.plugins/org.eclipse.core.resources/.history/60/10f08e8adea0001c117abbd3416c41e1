@@ -1,0 +1,32 @@
+package com.hibernatedemo.action;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.hibernatedemo.model.MyGroup;
+import com.hibernatedemo.model.Friend;
+import com.hibernatedemo.util.HibernateUtils;
+
+public class DemoOneToOneInstructorActionEx6 {
+
+	public static void main(String[] args) {
+		SessionFactory factory = HibernateUtils.getSessionFactory();
+		Session session = factory.getCurrentSession();
+
+		try {
+			session.beginTransaction();
+
+			MyGroup ins2 = session.get(MyGroup.class, 2);
+			Friend detail2 = new Friend("");
+			ins2.setFriend(detail2);
+
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			session.getTransaction().rollback();
+			e.printStackTrace();
+		} finally {
+			HibernateUtils.closeSessionFactory();
+		}
+
+	}
+}

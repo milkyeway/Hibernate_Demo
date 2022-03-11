@@ -18,7 +18,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="groups")
 public class MyGroup {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="groups_id")
@@ -32,8 +32,11 @@ public class MyGroup {
 	joinColumns = {@JoinColumn(name="fk_group_id", referencedColumnName = "groups_id")},
 	inverseJoinColumns = {@JoinColumn(name="fk_friend_id", referencedColumnName = "friends_id")}
 	)
-	private Set<Friend>friend = new HashSet<Friend>();
+	private Set<Friend> friends = new HashSet<Friend>();
 	
+	public MyGroup() {
+	}
+
 	public Integer getGroupId() {
 		return groupId;
 	}
@@ -50,15 +53,13 @@ public class MyGroup {
 		this.groupName = groupName;
 	}
 
-	public Set<Friend> getFriend() {
-		return friend;
+	public Set<Friend> getFriends() {
+		return friends;
 	}
 
-	public void setFriend(Set<Friend> friend) {
-		this.friend = friend;
+	public void setFriends(Set<Friend> friends) {
+		this.friends = friends;
 	}
-
-	public MyGroup() {
-	}
+	
 
 }

@@ -1,0 +1,37 @@
+package com.hibernatedemo.action;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.hibernatedemo.model.Friend;
+import com.hibernatedemo.model.MyGroup;
+import com.hibernatedemo.util.HibernateUtils;
+
+public class DemoManyToManyInstructorActionEx1 {
+
+	public static void main(String[] args) {
+		SessionFactory factory = HibernateUtils.getSessionFactory();
+		Session session = factory.getCurrentSession();
+
+		try {
+			session.beginTransaction();
+
+			Friend Frd1 = new Friend("Bill");
+			
+			MyGroup MyG1 = new MyGroup();
+			
+			Frd1.setMyGroup(MyG1);
+			
+			// 有 cascadeType.All 的設定，也會轉換 detail 的狀態,只需一次save()
+			session.save(Frd1);
+
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			session.getTransaction().rollback();
+			e.printStackTrace();
+		} finally {
+			HibernateUtils.closeSessionFactory();
+		}
+
+	}
+}

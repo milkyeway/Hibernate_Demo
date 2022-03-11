@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="friends")
 public class Friend {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="friends_id")
@@ -22,7 +22,7 @@ public class Friend {
 	
 	@Column(name="friendName")
 	private String friendName;
-
+	
 	@ManyToMany(mappedBy = "friends")
 	private Set<MyGroup> groups = new HashSet<MyGroup>();
 	
@@ -52,5 +52,6 @@ public class Friend {
 	public void setGroups(Set<MyGroup> groups) {
 		this.groups = groups;
 	}
+	
 
 }
