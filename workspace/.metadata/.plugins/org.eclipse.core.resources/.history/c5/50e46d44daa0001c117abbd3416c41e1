@@ -1,0 +1,9 @@
+package com.hibernatedemo.model;
+
+public class Friend {
+
+	public Friend() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

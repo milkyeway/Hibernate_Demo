@@ -37,6 +37,8 @@
         <mapping class="com.hibernatedemo.model.Instructor"/>
         <mapping class="com.hibernatedemo.model.Books"/>
         <mapping class="com.hibernatedemo.model.BookUsers"/>
+        <mapping class="com.hibernatedemo.model.MyGroup"/>
+        <mapping class="com.hibernatedemo.model.Friend"/>
         
     </session-factory>
 </hibernate-configuration>

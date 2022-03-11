@@ -42,3 +42,25 @@ publicYear nvarchar(50),
 fk_user_id int references bookUsers(id)
 );
 
+go
+
+create table friends(
+friends_id int not null primary key identity(1,1),
+friendName nvarchar(50) not null
+)
+
+go
+
+create table groups(
+groups_id int not null primary key identity(1,1),
+groupName nvarchar(50) not null
+)
+
+go
+
+create table friend_group(
+fk_friend_id int not null references friends(friends_id),
+fk_group_id int not null references groups(groups_id),
+primary key (fk_friend_id, fk_group_id)
+)
+
