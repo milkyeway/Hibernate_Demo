@@ -1,0 +1,35 @@
+package com.ispan.SpringBootDemo.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.ispan.SpringBootDemo.model.WorkMessages;
+import com.ispan.SpringBootDemo.service.WorkMessagesService;
+
+@Controller
+public class PageController {
+
+	@Autowired
+	private WorkMessagesService messageService;
+
+	@GetMapping("/")
+	public String welcomIndex() {
+		return "index";
+	}
+
+	@GetMapping("/message/add")
+	public ModelAndView addMessagePage(ModelAndView mav) {
+
+		WorkMessages message = new WorkMessages();
+		mav.getModel().put("workMessages", message);
+
+		WorkMessages lastMag = messageService.getLastest();
+		mav.getModel().put("lastMessage", lastMag);
+
+		mav.setViewName("addMessage");
+		return mav;
+	}
+
+}

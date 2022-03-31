@@ -1,0 +1,12 @@
+package com.ispan.SpringBootDemo.service;
+
+import org.springframework.stereotype.Service;
+
+import com.ispan.SpringBootDemo.model.WorkMessagesRepository;
+
+@Service
+public class WorkMessagesService {
+	
+	private WorkMessagesRepository workMessagesDao;	
+
+}
