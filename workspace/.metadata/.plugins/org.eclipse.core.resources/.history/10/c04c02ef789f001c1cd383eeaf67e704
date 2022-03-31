@@ -1,9 +1,0 @@
-package com.hibernatedemo.action;
-
-public class DemoDepartmentActionEx2 {
-
-	public DemoDepartmentActionEx2() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

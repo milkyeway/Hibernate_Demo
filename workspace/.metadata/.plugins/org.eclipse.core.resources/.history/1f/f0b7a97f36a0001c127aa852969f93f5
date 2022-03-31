@@ -1,9 +1,0 @@
-package com.hibernatedemo.model;
-
-public class InstructorDetail {
-
-	public InstructorDetail() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

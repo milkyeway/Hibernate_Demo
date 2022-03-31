@@ -1,9 +1,0 @@
-package com.hibernate.company;
-
-public class CompanyBeen {
-
-	public CompanyBeen() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

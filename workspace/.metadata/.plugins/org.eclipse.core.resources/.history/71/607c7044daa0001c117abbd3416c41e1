@@ -1,9 +1,0 @@
-package com.hibernatedemo.model;
-
-public class My_Group {
-
-	public My_Group() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

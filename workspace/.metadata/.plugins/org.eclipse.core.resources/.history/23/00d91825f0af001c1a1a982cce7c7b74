@@ -1,0 +1,26 @@
+package com.ispan.SpringBootDemo.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.ispan.springbootdemo.model.Customer;
+import com.ispan.springbootdemo.model.CustomerRepository;
+
+@Controller
+public class CustomerController {
+	
+	@Autowired
+	private CustomerRepository dao;
+	
+	@ResponseBody
+	@PostMapping(value = "customer/insert")
+	public Customer insertCustomer() {
+		Customer cus = new Customer("Will", 5);
+		Customer resCus = dao.save(cus);
+		
+		return resCus;
+	}
+
+}

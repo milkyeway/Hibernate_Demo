@@ -1,9 +1,0 @@
-package com.hibernatedemo.action;
-
-public class DemoCompanyBeanDaoActionEx1 {
-
-	public DemoCompanyBeanDaoActionEx1() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
