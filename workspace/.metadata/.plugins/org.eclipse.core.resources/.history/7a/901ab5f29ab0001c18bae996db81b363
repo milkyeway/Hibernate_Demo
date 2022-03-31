@@ -1,0 +1,5 @@
+package com.ispan.SpringBootDemo.service;
+
+public class WorkMessagesService {
+
+}
