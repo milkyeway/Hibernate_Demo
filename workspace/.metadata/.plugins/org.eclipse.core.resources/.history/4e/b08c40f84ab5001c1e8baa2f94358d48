@@ -1,0 +1,11 @@
+package com.ispan.SpringBootDemo.dto;
+
+import java.io.Serializable;
+
+public class MassageDto implements Serializable {
+
+	public MassageDto() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
